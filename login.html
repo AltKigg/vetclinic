@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <head>
 <title>Login Form Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    
-
+</head>
 <body>
+<div class="bg-img">
+  <form action="/action_page.php">
+    <div class="container">
+      <h1>Вход</h1>
+	    <form name="myform"  action="login.php" method="POST" >
 
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
 
-    <div class="box">
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pswd" required>
 
-        <h1>Login Here</h1>
-
-        <form name="myform"  action="login.php" method="POST" >
-
-            <p>Email</p>
-            <input type="text" name="email" placeholder="Enter Email " required="">
-
-            <p>Password</p>
-            <input type="password" name="pswd" placeholder="Enter Password" required="">
-
-
-            <input type="submit" name="" value="Login">
-
-            <br><br>
+      <button type="submit" class="btn">Войти</button>
         </form>
-        
     </div>
-
-    
-
-</body>
+  </form>
+</div>
 </html>
