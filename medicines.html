@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+<title>ЛК</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+</style>
+
+</head>
+<body>
+<div class="sidenav">
+<form action="" method="POST">     <!-- форма для меню -->
+  <a href="#enter">Войти</a><br>
+  <a href="#lk">Личный кабинет</a>
+  <a href="#appointments">Мои приемы</a>
+  <a href="#medcard">Медицинские карты</a>
+  <a href="#doctors">Врачи</a>
+  <a href="#services">Прайс</a>
+  <a href="#medicines">Медикаменты</a>
+</form>
+</div>
+<div class="main">
+  <h2>Медикаменты</h2>
+  <div style="overflow-x:auto;">
+  <table>
+    <tr>
+	  <th>Номер</th>
+      <th>Название</th>
+      <th>Код</th>
+    </tr>
+    <tr>
+	  <td>1</td>
+      <td>Boli Amoksiklav</td>
+      <td>Q1264</td>
+    </tr>
+    <tr>
+	  <td>2</td>
+      <td>Pulvis Amoksiklav</td>
+      <td>Q2267</td>
+    </tr>
+    <tr>
+	  <td>3</td>
+      <td>Amoximag</td>
+      <td>Q4112</td>
+    </tr>
+  </table>
+</div>
+<input type="submit" value="Добавить медикамент">
+</div>
+</body>
+</html>
