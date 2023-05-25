@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+<title>ЛК</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+
+</head>
+<body>
+<div class="sidenav">
+<form action="" method="POST">     <!-- форма для меню -->
+  <a href="#enter">Войти</a><br>
+  <a href="#lk">Личный кабинет</a>
+  <a href="#appointments">Мои приемы</a>
+  <a href="#medcard">Медицинские карты</a>
+  <a href="#doctors">Врачи</a>
+  <a href="#services">Прайс</a>
+  <a href="#medicines">Медикаменты</a>
+</form>
+</div>
+<div class="main">
+  <h2>Редактирование карточки врача</h2>
+  <div class="containerlk">
+  <form action="/action_page.php">
+    <label for="fname">ФИО</label>
+    <input type="text" id="fname" name="firstname" placeholder="">
+
+    <label for="lname">Телефон</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+	<label for="lname">Почта</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+	<label for="lname">Специальность</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+
+    <label for="subject">Адрес</label>
+    <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+
+    <input type="submit" value="Редактировать">
+  </form>
+</div>
+
+</div>
+</body>
+</html>
