@@ -50,26 +50,25 @@ input[type=submit]:hover {
   <a href="medicines.html">Медикаменты</a>
 </div>
 <div class="main">
-  <h2>Редактирование приема</h2>
+  <h2>Редактирование карточки врача</h2>
   <div class="containerlk">
   <form action="/action_page.php">
-    <label for="fname">Адрес</label>
-    <input type="text" id="fname" name="firstname" placeholder="Введите адрес..">
+    <label for="fname">ФИО</label>
+    <input type="text" id="fname" name="firstname" placeholder="">
 
-    <label for="lname">Услуга</label>
-    <input type="text" id="lname" name="lastname" placeholder="Введите услугу..">
+    <label for="lname">Телефон</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+	<label for="lname">Почта</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+	<label for="lname">Специальность</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
 
-    <label for="country">Доктор</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
+    <label for="subject">Адрес</label>
+    <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
 
-    <label for="subject">Заболевание</label>
-    <textarea id="subject" name="subject" placeholder="Введите текст.." style="height:200px"></textarea>
-
-    <input type="submit" value="Редактировать">
+    <input type="submit" value="Добавить">
   </form>
 </div>
 

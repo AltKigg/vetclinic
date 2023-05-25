@@ -34,7 +34,7 @@ $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
         $_SESSION["user"] = $row;
 
         // Redirect the user to welcome page
-        header("location: main.html");
+        header("location: lk.html");
      }
 $stmt->close();
 $con->close();

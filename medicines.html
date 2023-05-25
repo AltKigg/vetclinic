@@ -36,15 +36,13 @@ input[type=submit]:hover {
 </head>
 <body>
 <div class="sidenav">
-<form action="" method="POST">     <!-- форма для меню -->
-  <a href="#enter">Войти</a><br>
-  <a href="#lk">Личный кабинет</a>
-  <a href="#appointments">Мои приемы</a>
-  <a href="#medcard">Медицинские карты</a>
-  <a href="#doctors">Врачи</a>
-  <a href="#services">Прайс</a>
-  <a href="#medicines">Медикаменты</a>
-</form>
+  <a href="login.html">Войти</a><br>
+  <a href="lk.html">Личный кабинет</a>
+  <a href="appointment.html">Мои приемы</a>
+  <a href="medcard.html">Медицинские карты</a>
+  <a href="doctors.html">Врачи</a>
+  <a href="pricelist.html">Прайс</a>
+  <a href="medicines.html">Медикаменты</a>
 </div>
 <div class="main">
   <h2>Медикаменты</h2>
@@ -72,7 +70,9 @@ input[type=submit]:hover {
     </tr>
   </table>
 </div>
-<input type="submit" value="Добавить медикамент">
+<form action="medicinesenter.html">
+    <input type="submit" value="Добавить медикамент" >
+</form>
 </div>
 </body>
 </html>
