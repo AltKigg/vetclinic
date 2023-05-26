@@ -61,8 +61,7 @@ input[type=submit]:hover {
     <form action="exit.php">
     <input type="submit" value="Выйти" >
     </form>
-  <a href="lk.html">Личный кабинет</a>
-  <a href="appointment.html">Мои приемы</a>
+  <a href="lk.phtml">Личный кабинет</a>
   <a href="medcard.phtml">Медицинские карты</a>
   <a href="doctors.phtml">Врачи</a>
   <a href="pricelist.phtml">Прайс</a>
@@ -102,9 +101,7 @@ foreach($all as $row)
     echo "<p>Дата принятия на работу:" . $row["DateOfHire"] . "</p>";
     echo "</div>";
 }
-;
 ?>
-
 
 </div>
 </body>
