@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+	<html lang='ru'>
+	<head>
+		<meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
+
+		<title>Добавление пациента</title>
+	</head>
+	<body>
+	<form action='index.phtml' method='post'>
+		<input type='text' name='name' placeholder='Name' value=''>
+		<input type='text' name='mail' placeholder='eMail' value=''>
+		<br>
+		<br><input type='submit' name='add' value='add'>
+	</form>
+	<br>
+	<form method='post' action='index.phtml'>
+		<input type='submit' name='delete' value='delete'>
+	</form>
+</html>
+
+<?php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+//подключение к БД
+$host="localhost";
+$port=3360;
+$socket="";
+$user="root";
+$password="";
+$dbname="test";
+
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+	or die ('Could not connect to the database server' . mysqli_connect_error());
+
+
+//запрос на получение данных из БД
+$show = $con->query("SELECT * FROM patient");
+
+$lastid = $show->num_rows;
+
+//запрос на добавление
+$add = $con->prepare("INSERT INTO patient (idpatient, name, mail ) VALUES($lastid+1, ?, ?);");
+
+echo '
+	<table>
+		<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>eMail</th>
+		</tr>';
+$all = $show->fetch_all(MYSQLI_ASSOC);
+foreach($all as $row)
+{
+	echo "<tr>";
+	echo "<td>" . $row["idpatient"] . "</td>";
+	echo "<td>" . $row["name"] . "</td>";
+	echo "<td>" . $row["mail"] . "</td>";
+	echo "</tr>";
+}
+echo "
+	</table>
+	</body>
+	</html>
+";
+
+if (isset($_POST['add'])){
+	$add->bind_param("ss", $_POST['name'], $_POST['mail']);
+	$add->execute();
+}
+
+if (isset($_POST['delete']))
+{
+	$delete = $con->prepare("DELETE FROM patient WHERE idpatient = $lastid;");
+	$delete->execute();
+}
+
+
+?>

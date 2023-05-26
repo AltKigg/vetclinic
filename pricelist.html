@@ -50,17 +50,20 @@ input[type=submit]:hover {
   <a href="medicines.phtml">Медикаменты</a>
 </div>
 <div class="main">
-  <h2>Добавление медикамента</h2>
+  <h2>Добавление услуги</h2>
   <div class="containerlk">
-  <form action="medicines.php" method="POST">
+  <form action="pricelist.php" method="POST">
 
     <label for="lname">Название</label>
     <input type="text" id="Name" name="Name" placeholder="">
 	
-	<label for="lname">Код</label>
-    <input type="text" id="Code" name="Code" placeholder="">
+	<label for="lname">Описание</label>
+    <input type="text" id="Description" name="Description" placeholder="">
 	
-    <input type="submit" value="Добавить" id='add'>
+    <label for="lname">Цена</label>
+    <input type="text" id="Cost" name="Cost" placeholder="">
+
+    <input type="submit" value="Добавить" name='add'>
   </form>
 </div>
 

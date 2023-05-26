@@ -14,16 +14,16 @@ $dbname="vetclinic";
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
     or die ('Could not connect to the database server' . mysqli_connect_error());
 
-$show = $con->query("SELECT * FROM medicines");
+$show = $con->query("SELECT * FROM doctors");
 $lastid = $show->num_rows;
 //Prepare statement
-$add = $con->prepare("INSERT INTO medicines (idmedicines, Code, Name ) VALUES($lastid+1, ?, ?);");
+$add = $con->prepare("INSERT INTO doctors (iddoctors, Name, Birthday, TelNum, Email, Address, Specialization, Degree, DateOfHire) VALUES($lastid+1, ?, ?, ?, ?, ?, ?, ?, ?);");
 if (isset($_POST['add'])){
-    $add->bind_param("ss", $_POST['Code'], $_POST['Name']);
+    $add->bind_param("ssssssss", $_POST['Name'], $_POST['Birthday'], $_POST['TelNum'], $_POST['Email'], $_POST['Address'], $_POST['Specialization'], $_POST['Degree'], $_POST['DateOfHire'] );
     $add->execute();
 }
 
-header("location: medicines.phtml");
+header("location: doctors.phtml");
 
 $con->close();
 ?>
