@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="login.html">Войти</a><br>
+  <a href="lk.html">Личный кабинет</a>
+  <a href="appointment.html">Мои приемы</a>
+  <a href="medcard.html">Медицинские карты</a>
+  <a href="doctors.phtml">Врачи</a>
+  <a href="pricelist.phtml">Прайс</a>
+  <a href="medicines.phtml">Медикаменты</a>
+</div>
+
+<div class="main">
+  <h2>Прайс</h2>
+<?php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+//подключение к БД
+$host="localhost";
+$port=3360;
+$socket="";
+$user="root";
+$password="";
+$dbname="vetclinic";
+
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+    or die ('Could not connect to the database server' . mysqli_connect_error());
+
+//запрос на получение данных из БД
+$show = $con->query("SELECT * FROM services");
+
+$lastid = $show->num_rows;
+echo "<div class='row'>";
+$all = $show->fetch_all(MYSQLI_ASSOC);
+foreach($all as $row)
+{
+    echo "<div class='column'>
+          <div class='content'>";
+      echo "<h3>". $row["Name"] . "</h3>";
+      echo "<h4>". $row["Cost"] . "</h4>";
+      echo "<p>" . $row["Description"] . "</p>";
+    echo "</div></div>";
+}
+?>
+</div>
+     
+</body>
+</html> 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+<title>ЛК</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+</style>
+
+</head>
+<body>
+<div class="sidenav">
+  <a href="login.html">Войти</a><br>
+  <a href="lk.html">Личный кабинет</a>
+  <a href="appointment.html">Мои приемы</a>
+  <a href="medcard.html">Медицинские карты</a>
+  <a href="doctors.phtml">Врачи</a>
+  <a href="pricelist.phtml">Прайс</a>
+  <a href="medicines.phtml">Медикаменты</a>
+</div>
+
+<div class="main">
+    <h2>Медикаменты</h2>
+<form action="medicinesenter.html">
+    <input type="submit" value="Добавить медикамент" >
+</form><br>
+
+<?php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+//подключение к БД
+$host="localhost";
+$port=3360;
+$socket="";
+$user="root";
+$password="";
+$dbname="vetclinic";
+
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+    or die ('Could not connect to the database server' . mysqli_connect_error());
+
+//запрос на получение данных из БД
+$show = $con->query("SELECT * FROM medicines");
+
+$lastid = $show->num_rows;
+
+echo '
+    <table>
+        <tr>
+        <th>Номер</th>
+        <th>Код</th>
+        <th>Название</th>
+        </tr>';
+$all = $show->fetch_all(MYSQLI_ASSOC);
+foreach($all as $row)
+{
+    echo "<tr>";
+    echo "<td>" . $row["idmedicines"] . "</td>";
+    echo "<td>" . $row["Code"] . "</td>";
+    echo "<td>" . $row["Name"] . "</td>";
+    echo "</tr>";
+}
+echo "
+    </table>
+    </body>
+    </html>
+";
+?>
+</div>
+
+
+</body>
+</html>
