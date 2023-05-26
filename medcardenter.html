@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+<title>Медкарта</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+
+</head>
+<body>
+<div class="sidenav">
+  <a href="login.html">Войти</a><br>
+  <a href="lk.html">Личный кабинет</a>
+  <a href="appointment.html">Мои приемы</a>
+  <a href="medcard.html">Медицинские карты</a>
+  <a href="doctors.html">Врачи</a>
+  <a href="pricelist.html">Прайс</a>
+  <a href="medicines.html">Медикаменты</a>
+</div>
+<div class="main">
+  <h2>Добавление медицинской карты</h2>
+  <div class="containerlk">
+  <form action="/action_page.php">
+    <label for="fname">Номер карты</label>
+    <input type="text" id="fname" name="firstname" placeholder="">
+
+    <label for="lname">ФИО хозяина</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+
+    <label for="lname">Кличка животного</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+	<label for="lname">Пол</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+	<label for="lname">Порода</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+		<label for="lname">Дата рождения</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+			<label for="lname">Заболевание</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+	
+				<label for="lname">Лечение</label>
+    <input type="text" id="lname" name="lastname" placeholder="">
+
+    <label for="subject">Комментарий</label>
+    <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+
+    <input type="submit" value="Добавить">
+  </form>
+</div>
+
+</div>
+</body>
+</html>
