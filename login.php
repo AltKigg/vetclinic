@@ -1,4 +1,5 @@
 <?php
+session_start();
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $email  = $_POST['email'];
@@ -30,9 +31,9 @@ $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
       $error .= '<p class="error">The password is not valid.</p>';
 
      } else {
-        $_SESSION["userid"] = $row['id'];
-        $_SESSION["user"] = $row;
 
+        $_SESSION["userid"] = $row['iddoctors'];
+        echo  $_SESSION["userid"];
         // Redirect the user to welcome page
         header("location: lk.html");
      }

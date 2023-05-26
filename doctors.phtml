@@ -63,7 +63,7 @@ body {
     width: 30%;
 }
 
-/* Clear floats after rows */ 
+/* Clear floats after rows */
 .row:after {
     content: "";
     display: table;
@@ -96,7 +96,7 @@ input[type=submit]:hover {
 <body>
 
 <div class="sidenav">
-  <a href="login.html">Войти</a><br>
+  <a href="login.html">Выйти</a><br>
   <a href="lk.html">Личный кабинет</a>
   <a href="appointment.html">Мои приемы</a>
   <a href="medcard.html">Медицинские карты</a>
@@ -112,10 +112,10 @@ input[type=submit]:hover {
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 //подключение к БД
 $host="localhost";
-$port=3306;
+$port=3360;
 $socket="";
 $user="root";
-$password="Fikys598JKL";
+$password="";
 $dbname="vetclinic";
 
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
