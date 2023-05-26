@@ -24,8 +24,12 @@ if($email!="" and $pswd!="")
 
     if($count==1)
     {
-      foreach($result as $row) {$_SESSION['isAdmin'] = $row["isAdmin"];}
+      foreach($result as $row) {
+         $_SESSION['id'] = $row["iddoctors"];
+         $_SESSION['isAdmin'] = $row["isAdmin"];
+      }
         $_SESSION['email'] = $email;
+        $_SESSION['pass'] = $pswd;
         header("location:lk.phtml");
     }
     else {

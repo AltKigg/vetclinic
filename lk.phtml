@@ -69,6 +69,7 @@ input[type=submit]:hover {
 </div>
 <div class="main">
   <h2>Личный кабинет</h2>
+
 <?php
 session_start();
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -102,7 +103,10 @@ foreach($all as $row)
     echo "</div>";
 }
 ?>
-
+<br>
+<form action='lkedit.html'>
+    <input type='submit' value='Редактирование' >
+</form>
 </div>
 </body>
 </html>

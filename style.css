@@ -29,11 +29,28 @@ body {
     color: #696969;
 }
 
+.sidenav input[type=submit] {
+    background-color: #4682B4;
+    color: #DCDCDC;
+	font-size: 25px;
+    padding: 6px 8px 6px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sidenav input[type=submit]:hover {
+    background-color: #4682B4;
+}
+
+
+
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
+    font-size: 25px; /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
+
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
