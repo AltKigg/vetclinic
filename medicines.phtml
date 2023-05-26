@@ -62,12 +62,20 @@ input[type=submit]:hover {
 
 <div class="main">
     <h2>Медикаменты</h2>
-<form action="medicinesenter.html">
-    <input type="submit" value="Добавить" >
-</form><br>
 
 <?php
+session_start();
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+if ($_SESSION['isAdmin'] == 1)
+{
+    echo "<form action='medicinesenter.html'>
+    <input type='submit' value='Добавить' >
+    </form>";
+    echo "<form action='medicinesdelete.html'>
+    <input type='submit' value='Удалить' >
+    </form>";
+}
 //подключение к БД
 $host="localhost";
 $port=3360;
@@ -85,7 +93,7 @@ $show = $con->query("SELECT * FROM medicines");
 $lastid = $show->num_rows;
 
 echo '
-    <table>
+    <br><table>
         <tr>
         <th>Номер</th>
         <th>Код</th>

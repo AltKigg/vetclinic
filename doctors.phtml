@@ -109,7 +109,19 @@ input[type=submit]:hover {
 <h2>Наши специалисты</h2>
 
 <?php
+session_start();
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+if ($_SESSION['isAdmin'] == 1)
+{
+    echo "<form action='doctorsenter.html'>
+    <input type='submit' value='Добавить' >
+    </form>";
+    echo "<form action='doctorsdelete.html'>
+    <input type='submit' value='Удалить' >
+    </form>";
+}
+
 //подключение к БД
 $host="localhost";
 $port=3360;
@@ -122,7 +134,7 @@ $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
     or die ('Could not connect to the database server' . mysqli_connect_error());
 
 //запрос на получение данных из БД
-$show = $con->query("SELECT * FROM doctors");
+$show = $con->query("SELECT * FROM doctors WHERE iddoctors>0");
 
 $lastid = $show->num_rows;
 echo "<div class='row'>";
@@ -140,8 +152,5 @@ foreach($all as $row)
 }
 ?>
 </div>
-<form action="doctorsenter.html">
-    <input type="submit" value="Добавить врача" >
-</form>
 </body>
 </html> 

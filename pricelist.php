@@ -23,7 +23,11 @@ if (isset($_POST['add'])){
     $add->bind_param("sss", $_POST['Name'], $_POST['Description'], $_POST['Cost']);
     $add->execute();
 }
-
+if (isset($_POST['delete']))
+{
+    $delete = $con->prepare("DELETE FROM services WHERE Name = '{$_POST['Name']}';");
+    $delete->execute();
+}
 header("location: pricelist.phtml");
 
 $con->close();

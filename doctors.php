@@ -22,7 +22,11 @@ if (isset($_POST['add'])){
     $add->bind_param("ssssssss", $_POST['Name'], $_POST['Birthday'], $_POST['TelNum'], $_POST['Email'], $_POST['Address'], $_POST['Specialization'], $_POST['Degree'], $_POST['DateOfHire'] );
     $add->execute();
 }
-
+if (isset($_POST['delete']))
+{
+    $delete = $con->prepare("DELETE FROM doctors WHERE Name = '{$_POST['Name']}';");
+    $delete->execute();
+}
 header("location: doctors.phtml");
 
 $con->close();
