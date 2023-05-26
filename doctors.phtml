@@ -3,21 +3,79 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
-<link rel="stylesheet" type="text/css" href="style.css">
+<!--<link rel="stylesheet" type="text/css" href="style.css">-->
 
 <style>
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
+
+body {
+    background-color: #f1f1f1;
+    font-family: "Lato", sans-serif;
 }
 
-th, td {
-    text-align: left;
-    padding: 8px;
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4682B4;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #DCDCDC;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #696969;
+}
+
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+    padding: 10px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 30%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+<!--Кнопка-->
 tr:nth-child(even){background-color: #f2f2f2}
 
 input[type=submit] {
@@ -49,18 +107,15 @@ input[type=submit]:hover {
 
 <div class="main">
 <h2>Наши специалисты</h2>
-<form action="doctorsenter.html">
-    <input type="submit" value="Добавить врача" >
-</form>
 
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 //подключение к БД
 $host="localhost";
-$port=3360;
+$port=3306;
 $socket="";
 $user="root";
-$password="";
+$password="Fikys598JKL";
 $dbname="vetclinic";
 
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
@@ -85,5 +140,8 @@ foreach($all as $row)
 }
 ?>
 </div>
+<form action="doctorsenter.html">
+    <input type="submit" value="Добавить врача" >
+</form>
 </body>
 </html> 
