@@ -5,6 +5,41 @@
 <meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+
 <body>
 
 <div class="sidenav">
@@ -12,7 +47,6 @@
     <input type="submit" value="Выйти" >
     </form>
   <a href="lk.html">Личный кабинет</a>
-  <a href="appointment.html">Мои приемы</a>
   <a href="medcard.phtml">Медицинские карты</a>
   <a href="doctors.phtml">Врачи</a>
   <a href="pricelist.phtml">Прайс</a>
@@ -28,10 +62,10 @@
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 //подключение к БД
 $host="localhost";
-$port=3360;
+$port=3306;
 $socket="";
 $user="root";
-$password="";
+$password="Fikys598JKL";
 $dbname="vetclinic";
 
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)

@@ -7,10 +7,10 @@ $pswd = $_POST['pswd'];
 
 //подключение к БД
 $host="localhost";
-$port=3360;
+$port=3306;
 $socket="";
 $user="root";
-$password="";
+$password="Fikys598JKL";
 $dbname="vetclinic";
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
 	or die ('Could not connect to the database server' . mysqli_connect_error());

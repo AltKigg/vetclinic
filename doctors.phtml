@@ -3,48 +3,13 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
-<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+<link rel="stylesheet" type="text/css" href="style.css">
 
 <style>
-
-body {
-    background-color: #f1f1f1;
-    font-family: "Lato", sans-serif;
-}
-
-.sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #4682B4;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #DCDCDC;
-    display: block;
-}
-
-.sidenav a:hover {
-    color: #696969;
-}
-
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
     font-size: 28px; /* Increased text to enable scrolling */
     padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
 }
 
 .row {
@@ -72,7 +37,7 @@ body {
 
 /* Content */
 .content {
-    background-color: white;
+    background-color: #f1f1f1;
     padding: 10px;
 }
 <!--Кнопка-->
@@ -100,7 +65,6 @@ input[type=submit]:hover {
     <input type="submit" value="Выйти" >
     </form>
   <a href="lk.html">Личный кабинет</a>
-  <a href="appointment.html">Мои приемы</a>
   <a href="medcard.phtml">Медицинские карты</a>
   <a href="doctors.phtml">Врачи</a>
   <a href="pricelist.phtml">Прайс</a>
@@ -114,12 +78,11 @@ input[type=submit]:hover {
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 //подключение к БД
 $host="localhost";
-$port=3360;
+$port=3306;
 $socket="";
 $user="root";
-$password="";
+$password="Fikys598JKL";
 $dbname="vetclinic";
-
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
     or die ('Could not connect to the database server' . mysqli_connect_error());
 
