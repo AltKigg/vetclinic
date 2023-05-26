@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
 <head>
+<title>ЛК</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
 <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+
+
+
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 
@@ -32,31 +34,44 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-.container {
+.containerlk {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
 }
-</style>
-<body>
 
+ table {
+    border-collapse: collapse; /* Отображать двойные линии как одинарные */
+    }
+    th {
+     text-align: left; /* Выравнивание по левому краю */
+    }
+    td, th {
+     padding: 4px; /* Поля в ячейках */
+    } 
+	
+	
+</style>
+
+
+
+</head>
+<body>
 <div class="sidenav">
     <form action="exit.php">
     <input type="submit" value="Выйти" >
     </form>
   <a href="lk.html">Личный кабинет</a>
+  <a href="appointment.html">Мои приемы</a>
   <a href="medcard.phtml">Медицинские карты</a>
   <a href="doctors.phtml">Врачи</a>
   <a href="pricelist.phtml">Прайс</a>
   <a href="medicines.phtml">Медикаменты</a>
 </div>
-
 <div class="main">
-  <h2>Прайс</h2>
-<form action="pricelist.html">
-    <input type="submit" value="Добавить" >
-</form>
+  <h2>Личный кабинет</h2>
 <?php
+session_start();
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 //подключение к БД
 $host="localhost";
@@ -70,22 +85,27 @@ $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
     or die ('Could not connect to the database server' . mysqli_connect_error());
 
 //запрос на получение данных из БД
-$show = $con->query("SELECT * FROM services");
+$stmt = "SELECT * FROM doctors WHERE Email = '{$_SESSION['email']}';";
+$show = $con->query($stmt);
 
-$lastid = $show->num_rows;
-echo "<div class='row'>";
 $all = $show->fetch_all(MYSQLI_ASSOC);
 foreach($all as $row)
 {
-    echo "<div class='column'>
-          <div class='content'>";
-      echo "<h3>". $row["Name"] . "</h3>";
-      echo "<h4>". $row["Cost"] . "</h4>";
-      echo "<p>" . $row["Description"] . "</p>";
-    echo "</div></div>";
+    echo "<div class='containerlk'>";
+    echo "<h2>". $row["Name"] . "</h2>";
+    echo "<p>Специальность: ". $row["Specialization"] . "</p>";
+    echo "<p>Образование: " . $row["Degree"] . "</p>";
+    echo "<p>Телефон:" . $row["TelNum"] . "</p>";
+    echo "<p>Почта:" . $row["Email"] . "</p>";
+    echo "<p>День рождения:" . $row["Birthday"] . "</p>";
+    echo "<p>Адресс:" . $row["Address"] . "</p>";
+    echo "<p>Дата принятия на работу:" . $row["DateOfHire"] . "</p>";
+    echo "</div>";
 }
+;
 ?>
+
+
 </div>
-     
 </body>
-</html> 
+</html>
