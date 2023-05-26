@@ -41,13 +41,15 @@ input[type=submit]:hover {
 </head>
 <body>
 <div class="sidenav">
-  <a href="login.html">Войти</a><br>
+    <form action="exit.php">
+    <input type="submit" value="Выйти" >
+    </form>
   <a href="lk.html">Личный кабинет</a>
   <a href="appointment.html">Мои приемы</a>
-  <a href="medcard.html">Медицинские карты</a>
-  <a href="doctors.html">Врачи</a>
-  <a href="pricelist.html">Прайс</a>
-  <a href="medicines.html">Медикаменты</a>
+  <a href="medcard.phtml">Медицинские карты</a>
+  <a href="doctors.phtml">Врачи</a>
+  <a href="pricelist.phtml">Прайс</a>
+  <a href="medicines.phtml">Медикаменты</a>
 </div>
 <div class="main">
   <h2>Добавление медицинской карты</h2>
@@ -68,13 +70,13 @@ input[type=submit]:hover {
 	<label for="lname">Порода</label>
     <input type="text" id="lname" name="lastname" placeholder="">
 	
-		<label for="lname">Дата рождения</label>
+	<label for="lname">Дата рождения</label>
     <input type="text" id="lname" name="lastname" placeholder="">
 	
-			<label for="lname">Заболевание</label>
+	<label for="lname">Заболевание</label>
     <input type="text" id="lname" name="lastname" placeholder="">
 	
-				<label for="lname">Лечение</label>
+	<label for="lname">Лечение</label>
     <input type="text" id="lname" name="lastname" placeholder="">
 
     <label for="subject">Комментарий</label>
