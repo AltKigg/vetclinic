@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+<title>ЛК</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=date], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: #f2f2f2;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+
+</head>
+<body>
+<div class="sidenav">
+    <form action="exit.php">
+    <input type="submit" value="Выйти" >
+    </form>
+  <a href="lk.phtml">Личный кабинет</a>
+  <a href="medcard.phtml">Медицинские карты</a>
+  <a href="doctors.phtml">Врачи</a>
+  <a href="pricelist.phtml">Прайс</a>
+  <a href="medicines.phtml">Медикаменты</a>
+</div>
+<div class="main">
+  <h2>Добавление владельца питомца</h2>
+  <div class="containerlk">
+  <form action="owner.php" method="POST">
+    <label for="fname">ФИО</label>
+    <input type="text" id="Name" name="Name" placeholder="">
+
+    <label for="fname">День рождения</label>
+    <input type="date" id="Birthday" name="Birthday" placeholder="">
+
+    <label for="lname">Телефон</label>
+    <input type="text" id="TelNum" name="TelNum" placeholder="">
+	
+	<label for="lname">Почта</label>
+    <input type="text" id="Email" name="Email" placeholder="">
+	
+    <label for="subject">Адрес</label>
+    <input type="text" id="Address" name="Address" placeholder="">
+
+    <input type="submit" value="Добавить" id='add' name='add'>
+  </form>
+</div>
+
+</div>
+</body>
+</html>
