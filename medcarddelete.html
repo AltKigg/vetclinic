@@ -51,41 +51,16 @@ input[type=submit]:hover {
   <a href="medicines.phtml">Медикаменты</a>
 </div>
 <div class="main">
-  <h2>Добавление медицинской карты</h2>
+  <h2>Удаление медицинской карты</h2>
   <div class="containerlk">
   <form action="medcard.php" method = "POST">
-    <label for="lname">ФИО хозяина</label>
-    <input type="text" id="oname" name="oname" placeholder="">
+    <label for="lname">ID мед карты</label>
+    <input type="text" id="id" name="id" placeholder="">
 
-    <label for="lname">Кличка животного</label>
-    <input type="text" id="pname" name="pname" placeholder="">
-
-    <label for="lname">Пол</label>
-    <input type="text" id="sex" name="sex" placeholder="">
-
-    <label for="lname">Порода</label>
-    <input type="text" id="breed" name="breed" placeholder="">
-
-    <label for="lname">Дата рождения</label>
-    <input type="date" id="birthday" name="birthday" placeholder=""><br>
-
-    <label for="lname">Симптомы</label>
-    <input type="text" id="symptoms" name="symptoms" placeholder=""><br>
-
-    <label for="lname">Заболевание</label>
-    <input type="text" id="diagnosis" name="diagnosis" placeholder="">
-
-    <label for="subject">Комментарий</label>
-    <input type="text" id="comm" name="comm" placeholder=""><br>
-
-    <input type="submit" value="Добавить" name = "add">
+    <input type="submit" value="Удалить" name = "delete">
   </form>
 </div>
 <br>
 </div>
 </body>
 </html>
-
-
-
-

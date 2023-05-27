@@ -69,17 +69,10 @@ input[type=submit]:hover {
 </div>
 <div class="main">
   <h2>Медицинские карты</h2>
-<form action="medcardenter.html">
-    <input type="submit" value="Добавить" >
-</form>
-<form action='medcarddelete.html'>
-    <input type='submit' value='Удалить' >
-    </form>
-</ul><form action='medcardedit.html'>
-    <input type='submit' value='Редактировать' >
-</form>
 
 <?php
+session_start();
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 //подключение к БД
 $host="localhost";
@@ -92,19 +85,37 @@ $dbname="vetclinic";
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
     or die ('Could not connect to the database server' . mysqli_connect_error());
 
-//запрос на получение данных из БД
-$show = $con->query("SELECT * FROM owners");
+$oname = $_GET["Name"];
+$stmt = $con->query("SELECT idOwner FROM owners WHERE Name = '$oname';");
+$all = $stmt->fetch_all(MYSQLI_ASSOC);
+foreach($all as $row)
+{$oid = $row["idOwner"];}
 
-$lastid = $show->num_rows;
+$_SESSION['oid'] = $oid;
+
+$show = $con->query("SELECT * FROM medcard WHERE owners_idOwner = '$oid' ;");
+
+echo "<h3>Хозяин: " . $oname . "</h3>";
 echo "<div class='row'>";
 $all = $show->fetch_all(MYSQLI_ASSOC);
 foreach($all as $row)
 {
-    echo "<ul class='nav nav-pills nav-stacked'>";
-      echo "<li><form action = 'medcardowner.phtml' method='GET'> <input type='submit' name='Name' value='". $row["Name"] . "'></form></li><br>";
+    echo "<div class='content'>";
+      echo "<h4>Кличка животного: ". $row["petname"] . "</h4>";
+      echo "<ul><p> Пол: ". $row["gender"] . "</p>";
+      echo "<p> Порода: " . $row["breed"] . "</p>";
+      echo "<p>Дата рождения: " . $row["birthday"] . "</p>";
+	  echo "<p>Заболевание: " . $row["diagnosis"] . "</p>";
+      echo "<p>Симптомы: " . $row["symptoms"] . "</p>";
+      echo "<p>Комментарии: " . $row["Commentary"] . "</p>";
+
+
 }
-echo "</ul>";
 ?>
+
+<br>
+
+
 
 </div>
 </body>

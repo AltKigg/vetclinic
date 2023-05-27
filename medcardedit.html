@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Медкарта</title>
+<title>ЛК</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv='Content-Type' content='text / html; charset = UTF-8' />
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -16,6 +16,18 @@ input[type=text], select, textarea {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
+}
+
+input[type=date], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: #f2f2f2;
 }
 
 input[type=submit] {
@@ -51,41 +63,24 @@ input[type=submit]:hover {
   <a href="medicines.phtml">Медикаменты</a>
 </div>
 <div class="main">
-  <h2>Добавление медицинской карты</h2>
+  <h2>Редактирование данных</h2>
   <div class="containerlk">
-  <form action="medcard.php" method = "POST">
-    <label for="lname">ФИО хозяина</label>
-    <input type="text" id="oname" name="oname" placeholder="">
-
-    <label for="lname">Кличка животного</label>
-    <input type="text" id="pname" name="pname" placeholder="">
-
-    <label for="lname">Пол</label>
-    <input type="text" id="sex" name="sex" placeholder="">
-
-    <label for="lname">Порода</label>
-    <input type="text" id="breed" name="breed" placeholder="">
-
-    <label for="lname">Дата рождения</label>
-    <input type="date" id="birthday" name="birthday" placeholder=""><br>
-
-    <label for="lname">Симптомы</label>
-    <input type="text" id="symptoms" name="symptoms" placeholder=""><br>
-
-    <label for="lname">Заболевание</label>
+  <form action="medcard.php" method="POST">
+    <label for="subject">ID редактируемого питомца* </label>
+    <input type="text" id="pid" name="pid" placeholder="">
+    <br><br>
+    <label for="subject">Заболевание</label>
     <input type="text" id="diagnosis" name="diagnosis" placeholder="">
-
-    <label for="subject">Комментарий</label>
-    <input type="text" id="comm" name="comm" placeholder=""><br>
-
-    <input type="submit" value="Добавить" name = "add">
-  </form>
-</div>
-<br>
+    <input type="submit" value="Изменить" id='diagnosiss' name='diagnosiss'>
+    <br>
+    <label for="subject">Симптомы</label>
+    <input type="text" id="symptoms" name="symptoms" placeholder="">
+    <input type="submit" value="Изменить" id='symptomss' name='symptomss'>
+    <br>
+    <label for="subject">Комментарии</label>
+    <input type="text" id="comms" name="comms" placeholder="">
+    <input type="submit" value="Изменить" id='commss' name='commss'>
+</form>
 </div>
 </body>
 </html>
-
-
-
-
